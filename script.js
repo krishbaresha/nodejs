@@ -18,3 +18,20 @@ dependencies
 devdependencies
 scripts - understanding default scripts PATH and custom scripts
 */
+
+
+// import express from 'express'
+const express = require('express')
+
+
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('Hello World')
+})
+
+app.get('/profile',(req,res) => {
+    res.send("Me Champion Hun")
+})
+
+app.listen(3000) 
