@@ -26,12 +26,38 @@ const express = require('express')
 
 const app = express()
 
+// Middle Ware jo har route pr chlta hai 
+
+app.use((req,res,next)=>{
+  console.log("Middle Ware chala");
+  next()
+})
+
+app.use((req,res,next)=>{
+  console.log("Middle Ware Dubara se chala chala");
+  next()
+})
+
 app.get('/', (req, res) => {
   res.send('Hello World')
 })
 
 app.get('/profile',(req,res) => {
-    res.send("Me Champion Hun")
+    res.send("Me Profile ME Hun")
 })
+
+app.get('/home',(req,res,next) => {
+    return next(new Error("Something went wrong"))
+    // res.send("Me HOME ME Hun")
+})
+
+// Error Handling
+
+app.use((err,req,res,next,)=>{
+  console.error(err.stack);
+  res.status(500).send("Something got broke");
+  next()
+})
+
 
 app.listen(3000) 
