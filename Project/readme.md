@@ -4,7 +4,7 @@ setting up ejs for ejs pages ==> Frontend jo humara dekhy ga html ki trha hi hot
     install ejs from npm ✅
     setup ejs as a view engine ✅
 
-setting up public static files
+setting up public static files ✅
 
 dynamic routing
     dynamic routing
